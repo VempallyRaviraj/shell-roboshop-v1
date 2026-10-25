@@ -52,5 +52,6 @@ do
             }
         }]
     }'
+    echo "Updated r53 record for $instance"
 
 done
