@@ -22,4 +22,3 @@ do
   echo "$instance ID: $instance_id"
 
 done
-
