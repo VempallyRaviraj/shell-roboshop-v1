@@ -37,7 +37,7 @@ do
   fi
 
   echo "$instance IP: $IP"
-  echo "Updating DNS record: $r53_record"
+
 
   aws route53 change-resource-record-sets \
     --hosted-zone-id $hosted_zone_id \
@@ -48,7 +48,7 @@ do
                 "Name": "$r53_record",
                 "Type": "A",
                 "TTL": 1,
-                "ResourceRecords": [{"Value": "$IP"}]
+                "ResourceRecords": [{"Value": "'$IP'"}]
             }
         }]
     }'
