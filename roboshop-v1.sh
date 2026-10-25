@@ -3,7 +3,7 @@
 ami_id="ami-0055977a6e828a4f4"
 instance_type="t3.micro"
 domain_name="joindevsecops.shop"
-hosted_zone_id="YOUR_ACTUAL_HOSTED_ZONE_ID"
+hosted_zone_id="Z04941153NDEVSC5CAM9O"
 
 for instance in "$@"
 do
