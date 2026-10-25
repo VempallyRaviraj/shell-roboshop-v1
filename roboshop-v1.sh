@@ -40,19 +40,17 @@ do
   echo "Updating DNS record: $r53_record"
 
   aws route53 change-resource-record-sets \
-    --hosted-zone-id "$hosted_zone_id" \
-    --change-batch "{
-      \"Changes\": [
-        {
-          \"Action\": \"UPSERT\",
-          \"ResourceRecordSet\": {
-            \"Name\": \"$r53_record\",
-            \"Type\": \"A\",
-            \"TTL\": 60,
-            \"ResourceRecords\": [{\"Value\": \"$IP\"}]
-          }
-        }
-      ]
-    }"
+    --hosted-zone-id $hosted_zone_id \
+    --change-batch '{
+        "Changes": [{
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "$r53_record",
+                "Type": "A",
+                "TTL": 1,
+                "ResourceRecords": [{"Value": "$IP"}]
+            }
+        }]
+    }'
 
 done
